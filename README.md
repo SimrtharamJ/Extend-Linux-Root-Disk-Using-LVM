@@ -1,14 +1,14 @@
 # Extend-Linux-Root-Disk-Using-LVM
 Step-by-step guide to expand the root (/) partition in Linux using LVM and a second disk.
 
-# 🧱 Extend Linux Root Partition Using LVM (AlmaLinux + VMware)
+# Extend Linux Root Partition Using LVM (AlmaLinux + VMware)
 
-## 🔧 Problem
+##  Problem
 
 My root partition (`/`) was only 70 GB, while a second 2 TB SSD was connected to the same server 
 (running on VMware Workstation Pro on Windows). I needed to **extend the root volume using space from the second SSD**.
 
-## 💻 Environment
+##  Environment
 - OS: AlmaLinux (RHEL-based)
 - Virtualized on: VMware Workstation Pro
 - Filesystem: XFS
@@ -16,7 +16,7 @@ My root partition (`/`) was only 70 GB, while a second 2 TB SSD was connected to
 
 ---
 
-## 📷 Initial Disk Layout
+##  Initial Disk Layout
 
 - Root (`/`) = 70 GB → **Too small**
 - `/mnt/old_home` = 527 GB
@@ -24,21 +24,21 @@ My root partition (`/`) was only 70 GB, while a second 2 TB SSD was connected to
 
 ---
 
-## ✅ Goal
+##  Goal
 
 Increase the root filesystem (`/`) from **70 GB** → **200+ GB** using the available 2 TB SSD space.
 
 ---
 
-## 🗺️ Solution Diagram
+## 🗺 Solution Diagram
 
-> 📌 See the visual workflow below:
+>  See the visual workflow below:
 
 ![LVM Root Expansion Diagram](./lvm-extension-diagram.png)
 
 ---
 
-## 🔨 Step-by-Step Commands
+##  Step-by-Step Commands
 
 ```bash
 # 1. Create a new partition on the 2 TB disk
